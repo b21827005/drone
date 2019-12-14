@@ -103,16 +103,6 @@ vehicle.mode = VehicleMode("RTL")
 print("Close vehicle object")
 vehicle.close()
 
-bottomx, bottomy = 39.871785, 32.732163
-x = 39.871839
-y = 32.731925
-diff = bottomx - x
-while True:
-    point_temp = LocationGlobalRelative(x, y, 20)
-    vehicle.simple_goto(point_temp)
-    if vehicle.location.global_frame == (39.871843, 32.732315):
-        break
-    x += bottomx - x
 # Shut down simulator if it was started.
 if sitl:
     sitl.stop()
